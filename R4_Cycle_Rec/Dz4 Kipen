@@ -1,0 +1,58 @@
+//12
+#include <stdio.h>
+#define N 50
+int main()
+{
+    int a[N];
+    int i = 0;
+    printf("Vvedite ne bolshe 50 chisel\n");
+    do{
+        printf("a[%d]=", i);
+        scanf_s("%d", &a[i]);
+        i += 1;
+    } while (a[i - 1] != 0);
+    int n = i;
+    //printf("%d\n", n);
+    int b[N];
+    b[0] = 0; b[1] = 1; b[2] = 1;
+    for (int j = 3; j < N; j++) //sozdaev massiv iz chisel phibonacci
+    {
+        b[j] = b[j - 1] + b[j - 2];
+    }
+    int m = sizeof(b) / sizeof(b[0]); 
+    int sum = 0;
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j <= i; j++) {
+            if (i = b[j])
+            {
+                sum += a[i];
+            }
+            else
+                sum += 0;
+        }
+    }
+    printf("%d", sum);
+}
+//17 n
+#include <stdlib.h>
+#include <math.h>
+double Tailor(double x, double eps)
+{
+	double y = 1 - (x / 2);
+	int i = 1;
+	double z = x / 2;
+	while (fabs(z)>eps)
+	{
+		z = -z * x * i / (i + 3);
+		i += 2;
+		y += z;}
+	return y;
+}
+int main()
+{
+	double x, eps, y;
+	scanf('%lf', &x);
+	do { scanf("%lf", &eps); } while (eps <= 0);
+	y = Tailor(x, eps);
+	printf("y=%lf", y);
+}

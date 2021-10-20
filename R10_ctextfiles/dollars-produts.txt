@@ -1,0 +1,3 @@
+apple 10 dollars 5 cents
+banana 23 dollars 8 cents
+jam 0 dollars 85 cents

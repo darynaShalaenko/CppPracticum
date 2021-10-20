@@ -1,14 +1,14 @@
 #include <stdio.h>
-#include <intypes.h>
+#include <stdint.h>
 
 unsigned uint32_t byteReplace(uint32_t n){
 
-unsigned res = n & 0x00FFFF00;
-printf("%x %x\n",n, res);
-res |= (n>>24);
-printf("%x %x\n",n, res);
-res |= (n<<24); 
-printf("%x %x\n",n, res);
+   unsigned res = n & 0x00FFFF00; // 2-3 byte
+   //printf("%x %x\n",n, res);
+   res |= (n>>24); //1 byte
+   //printf("%x %x\n",n, res);
+   res |= (n<<24); // 4 byte
+   //printf("%x %x\n",n, res);
   return res;
 }
 
@@ -23,13 +23,13 @@ unsigned byteReplace2(unsigned n){
    unsigned m1 = sizeof(n)*8 -8;
    unsigned Mask1 = (1<<m1) - (1<<8);
 
-res = n & Mask1;
-printf("%x %x\n",n, res);
-res |= (n>>m1);
-printf("%x %x\n",n, res);
-res |= (n<<m1); 
-printf("%x %x\n",n, res);
-return res;
+   res = n & Mask1;
+   //printf("%x %x\n",n, res);
+   res |= (n>>m1);
+   //printf("%x %x\n",n, res);
+   res |= (n<<m1); 
+   //printf("%x %x\n",n, res);
+   return res;
 }
 
 

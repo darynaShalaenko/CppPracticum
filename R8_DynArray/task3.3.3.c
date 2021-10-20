@@ -11,7 +11,7 @@ int input(double *a, int n){
      printf("a[%d]=",i);
      scanf("%lf",&a[i]);
    }
- return 0;
+ return n;
 }
 
 double* dif(double* v1,int n1, double* v2,int n2){
@@ -20,7 +20,7 @@ double* dif(double* v1,int n1, double* v2,int n2){
    if(n1==n2){
 
    res = calloc(n1,sizeof(double));
-
+   if(!res) return NULL; 
    for(int i=0;i<n1;++i){
      res[i] = v1[i] - v2[i];
    }
@@ -69,12 +69,12 @@ int main(){
 
   if(v3){
       print(v3,n1);
-      free(v3);
+      delete(v3);
   } 
  else{
-  printf("n1<>n2 - no difference");
+  printf("n1<>n2 - no difference can be calculated");
 } 
 
-  free(v2);
-  free(v1); 
+  delete(v2);
+  delete(v1); 
 }

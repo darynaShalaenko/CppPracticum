@@ -26,7 +26,12 @@ int main(){
   printf("n=");
   scanf("%d",&n);
 
-  double* a = (double*) malloc(n*sizeof(double)); // double(void*)
+  double a[] = (double*) malloc(n*sizeof(double)); // double(void*)
+  
+  if(!a){
+      printf("No memory allocated, exit");
+      return;
+  }
 
   input(a,n); 
 

@@ -1,17 +1,13 @@
 /*
-1) Двовимірна матриця 3х3 ініціалізована числами
-{{1,2,3,},{4,5,6},{7,8,9}}. Транспонуйте цю матрицю, введіть
-натуральні числа N і M та замініть елемент, що рівний числу M 
-
 */
 
 #include <stdio.h>
 
-#define N 10
-#define M 10
+#define N 20
+#define M 20
 
 
-void vyvod(int matr[N][M],unsigned n, unsigned m){
+void vyvod(const int matr[N][M],unsigned n, unsigned m){
 
   for(int i=0;i<n;++i){
        for(int j=0;j<m;++j){

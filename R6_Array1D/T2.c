@@ -11,7 +11,7 @@ void inp_arr(double x[], int n)
   }
 }
 
-void func(double x[], double y[], double z[], int n, unsigned sigma)
+void func(const double x[], const double y[], double z[], int n, unsigned sigma)
 {
   for (int i = 0; i < n; i++)
   {
@@ -19,7 +19,7 @@ void func(double x[], double y[], double z[], int n, unsigned sigma)
   }
 }
 
-void out_vec(double x[], int n)
+void out_vec(const double x[], int n)
 {
   for (int i = 0; i < n; i++) {
     printf("x[%d] = %lf\n", i, x[i]);

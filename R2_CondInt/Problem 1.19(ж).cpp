@@ -6,10 +6,15 @@
 #include <cmath>
 using namespace std;
 
+
+//if(x==0) wrong pracice
+
 bool isNearlyZero(float x)
 {
     return fabs(x) < 0.0000001;
 }
+
+
 float fun(float x, float a)
 {
     if (isNearlyZero(a))

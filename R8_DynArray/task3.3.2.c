@@ -40,7 +40,7 @@ int num_cubes(int* a, int n){
     m = (int)pow(a[i],1.0/3);
     m1 = m+1;
       //printf("\nC %d %d",m,a[i]);
-    if(m*m*m == a[i] ||m1*m1*m1==a[i]) {
+    if(m*m*m == a[i] || m1*m1*m1==a[i]) {
        count++; 
       //printf("\nCube %d %d",m,a[i]);
     }

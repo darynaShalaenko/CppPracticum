@@ -1,0 +1,3 @@
+apple 23 hrn 54 cop
+banana 54 hrn 1 cop
+jam 2 hrn 0 cop

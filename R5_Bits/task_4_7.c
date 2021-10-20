@@ -6,6 +6,8 @@ int main() {
 /*
 N = 1 byte | 2 byte | 3 byte | 4 byte
 
+N = 4 byte | 3 byte | 2 byte | 1 byte
+
 N   = 00001.. | 00.. | ... | ....
 
     a1 * 8^3 +  a2 * 8^2 + a3 *8 + a4 // little
@@ -22,12 +24,12 @@ N   = 00001.. | 00.. | ... | ....
 
 
 
- unsigned M = (1<<24) + (2<<16) + (3<<8) + 4;
+ unsigned M = (1<<24) + (2<<16) + (3<<8) + 4; // 01020304
  unsigned a1 = M & 0xFF;
  unsigned a2 = (M & 0xFF00)>>8;
 
  if( (a1 == 4) && (a2==3)) { printf("little"); }
- else if ((a1 == 4) && (a2==2)) {printf("little");}
+ else if ((a1 == 4) && (a2==2)) {printf("middle");}
  else if (a1==1) { 
     printf("big");
  }  

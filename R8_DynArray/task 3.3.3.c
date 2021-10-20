@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <math.h>
+#include <stdlib.h>
 
 int * alloc_memory(int n)
 {
@@ -34,8 +35,7 @@ void print_arr(int * arr, int n)
     }
 }
 
-int main()
-{
+int main(){
     int n;
     int *arr, *arr_2, *new_arr;
 

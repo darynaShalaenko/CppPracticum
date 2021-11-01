@@ -14,34 +14,34 @@ std::cout.precision(3);
 std::cout.fill(' '); 
 
 for (x = 1.0; x <= n; x++) { 
-      std::cout<<"++++++++";
+      std::cout<<"++++++";
 }
 std::cout <<std::endl;
 
-std::cout.width(4);
+std::cout.width(3);
 std::cout << 1 << " "; 
 
 for (x = 2.0; x <= n; x++) { 
-   std::cout.width(7);
+   std::cout.width(5);
    std::cout << x << " ";
 }
 std::cout <<std::endl;
 for (x = 1.0; x <= n; x++) { 
-      std::cout<<"++++++++";
+      std::cout<<"++++++";
 }
 
 std::cout <<std::endl;
 
-std::cout.width(4);
+std::cout.width(3);
 std::cout << 1.0 << " ";
 
 for (x = 2.0; x <= n; x++) { 
-   std::cout.width(7); 
+   std::cout.width(5); 
    std::cout << sqrt(x) << " "; 
 }
 std::cout <<std::endl;
 for (x = 1.0; x <= n; x++) { 
-      std::cout<<"++++++++";
+      std::cout<<"++++++";
 }
 std::cout <<std::endl;
 

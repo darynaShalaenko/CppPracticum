@@ -1,0 +1,160 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian,ukrainian]{babel}
+
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[unicode=true]{hyperref}
+\hypersetup{
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+\date{}
+
+\usepackage{multicol}
+
+\usepackage{enumitem}
+\makeatletter
+\newcommand{\xslalph}[1]{\expandafter\@xslalph\csname c@#1\endcsname}
+\newcommand{\@xslalph}[1]{%
+    \ifcase#1\or а\or б\or в\or г\or д\or e\or є\or ж\or з\or i%
+    \or й\or к\or л\or м\or н\or о\or п\or р\or с\or т%
+    \or у\or ф\or х\or ц\or ч\or ш\or ю\or я\or аа\or бб\or вв %
+    \else\@ctrerr\fi%
+}
+\AddEnumerateCounter{\xslalph}{\@xslalph}{m}
+\makeatother
+
+
+\begin{document}
+
+Напишіть та протестуйте всі пункти даних задач. 
+Результат розв'язків даних задач повинен міститись в даній папці за назвою "Hakaton1"
+та запускатись даним мейкфайлом.
+В заголовні файли можна додавати щось, але не можна видаляти чи змінювати.
+
+Увага! Користуватись колекціями С++ не можна - задачі на "чистому" С!
+
+
+В наступних двох задачах умови $Q(x)$ задаються предікатом, або 
+булевою функцією, що передається через вказівник як аргумент.
+\begin{enumerate}
+\item 
+Нехай множина дійсних чисел (float) задана у файлі. 
+Дані вводяться у файл з клавіатури або з файлу input.dat, 
+виводяться на екран та у файл output.txt.
+
+Формат файлу:
+На початку - unsigned число N - кількість чисел ($1 \le N \le 100000$). Далі
+записано N float чисел, кожне не перевищує $2 * 10^9$ по модулю.
+
+Сформуйте файл множини, тобто жоден елемент не повторюється.
+Інтерфейс:
+
+int formSetFile(const char* finput, const char* foutput)
+
+Визначити:
+\begin{enumerate}[label=\xslalph*)]
+\item процедуру введення множини з консолі;
+\item процедуру виведення множини на консоль;
+\item процедуру доповнення множини;
+\item процедуру видалення елемента з множини;
+\item функцію, що дає відповідь, чи входить елемент до множини;
+\item функцію, що дає відповідь, чи порожня множина;
+\item функцію, що знаходить максимальний елемент множини;
+\item функцію, що знаходить мінімальний елемент множини;
+\item процедуру об'єднання множин;
+\item процедуру різниці множин;
+\item процедуру перетину множин;
+\item функцію обчислення зваженої сумарної ваги множини (множина та масив дійсних елементів - ваг кожного елементу множини);
+\item функцію обчислення діаметра множини;
+\item функцію, що за множиною A знаходить підмножину всіх таких її
+елементів, для яких справедлива умова $Q(х)$, $x\in A$;
+\item функцію, що з'ясовує, чи є множина A підмножиною множини В;
+\item функцію, що з'ясовує, чи дорівнює множина A множині В.
+\end{enumerate}
+
+\item
+Дано бінарний файл, компоненти якого є записи (koef, st) -- дійсний коефіцієнт і
+ступінь членів полінома ($koef \neq 0$, $koef \in \bf{R}$). Визначити підпрограми для виконання
+таких дій над поліномом:
+\begin{enumerate}[label=\xslalph*)]
+\item введення полінома з консолі;
+\item друк полінома (з файлу);
+\item обчислення похідної від полінома (результат у файл з заданою назвою);
+\item обчислення невизначеного інтеграла від полінома(результат у файл з заданою назвою, вільний член - 0);
+\item упорядкування за степенями елементів полінома;
+\item приведення подібних серед елементів полінома;
+\item додавання, віднімання двох поліномів;
+\item множення двох поліномів;
+\item знаходження частки та залишку від ділення двох поліномів;
+\item знаходження полінома за лінійної заміни змінної $x = dx + c$, $d \neq 0$;
+\item знаходження полінома за заміни змінної $x = x^{d}$, $d \neq 0$;
+\item знаходження ступеня поліному;
+\item з'ясування, чи має поліном корені, рівні нулю, і визначення їхньої
+кратності;
+\item знаходження номеру максимального коефіцієнта серед
+коефіцієнтів полінома, які задовольняють умову $Q(x)$ 
+(якщо такого коефіцієнта немає - отримати -1);
+\item знаходження номеру та значення мінімального за умовою $Q(х)$ коефіцієнта серед
+коефіцієнтів полінома (якщо такого коефіцієнта немає - отримати
+пару (-1,NULL) );
+\item знаходження значення полінома в заданій точці.
+\end{enumerate}
+
+Додаткова інформація в заголовних файлах.
+
+\end{enumerate}
+
+\end{document}

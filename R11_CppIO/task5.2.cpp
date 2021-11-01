@@ -7,23 +7,31 @@
 */
 #include <iostream>
 #include <cstdlib>
+#include <string>
 //using namespace std;
 
 int main(){
   char str[10];
   unsigned a;
   unsigned long long sum=0L;
-  std::cout << "Enter";
+  std::cout << "Enter;\n";
+  unsigned n = 0;
+
+  unsigned mas[1000];
 
   while(std::cin.get(str,10)){
    std::cout<<str<<","<<std::endl;
-   a = atoi(str); //stod(),stoll - c++11
-   sum +=a;
+   a = atoi(str); 
+   //stod(),stoll - c++11
+   //std::string::size_type sz;     // alias of size_t
+   //a = std::stoul(str,&sz);
+   
+   mas[n] = a;
+   n++;
+   sum += a;
  }  
 
-  std::cout<<"s="<<sum;
-
-  return 0;
+  std::cout<<"s="<<sum<<"\n";
 }
 
 

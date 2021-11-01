@@ -24,7 +24,7 @@ int main(){
    
   if(answ.length()==0 || answ.length()==1 && answ[0]=='c') {
      while(std::cin>>mas[i++]){
-     std::clog<<"mas["<<i<<"]="<<mas[i-1];
+       std::clog<<"mas["<<i<<"]="<<mas[i-1];
      }
      
      for(size_t j=i;j!=0;j--){

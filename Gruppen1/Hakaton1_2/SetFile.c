@@ -2,12 +2,12 @@
 #include "SetFile.h"
 
 #include <stdlib.h>
-// solution by sorted array
+// solution by arrayset
 
 FTYPE mas1[N];
 FTYPE mas2[N];
 
-int createMas(const char* fname, FTYPE* arr){
+int createSet(const char* fname, FTYPE* arr){
     FILE* f = fopen(fname, "rb");
     unsigned n;
     fread(&n, sizeof(n), 1, f);
@@ -17,7 +17,8 @@ int createMas(const char* fname, FTYPE* arr){
     for (int i=0; i<n; i++)
     {
         fread(&tmp, sizeof(tmp), 1, f);
-        arr[i] = tmp;
+        unsigned tmp_int =  (*(unsigned*)&tmp)%N;    
+        arr[tmp_int] = 1;
     }
 
     fclose(f);

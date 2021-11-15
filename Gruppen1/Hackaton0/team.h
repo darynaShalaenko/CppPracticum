@@ -6,7 +6,7 @@ typedef struct Team{
 
 int createTeam(Team* t);
 
-int setTeam(Team* t, const char* name, unsigned m);
+int assignTeam(Team* t, const char* name, unsigned m);
 
 int inputTeam(Team* t);
 

@@ -7,7 +7,7 @@ typedef struct T_Match{
 
 int inputMatch(T_Match* res);
 
-int setMatch(T_Match* t, unsigned char n1, unsigned char n2, unsigned char b1,unsigned char b2);
+int assignMatch(T_Match* t, unsigned char n1, unsigned char n2, unsigned char b1,unsigned char b2);
 
 void showMatch(const T_Match* res);
 

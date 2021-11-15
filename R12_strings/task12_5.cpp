@@ -60,5 +60,5 @@ int main(){
   cout<<inp_str; 
   string k = shortword(inp_str);
 
-  cout<< "\n The words with sama start/end = "<<k<<endl;
+  cout<< "\n The first shortest word = "<<k<<endl;
 }

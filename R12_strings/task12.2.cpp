@@ -12,6 +12,7 @@
 
 #include <iostream>
 #include <string>
+#include <cctype>
 
 using namespace std;
 
@@ -30,7 +31,7 @@ int stops(string &s){
   
    //s.erase(0,p1+1);
    size_t p2 = s.rfind(".",p1-1);
-   cout<<"p2="<<p2; 
+   cout<<"p2="<<p2<<"\n"; 
    if(p2==string::npos){
       s.erase(0,p1-1);
       return 1; 
@@ -43,10 +44,14 @@ int stops(string &s){
 int main(){
 
 
-   string test[] ={"fgdsf.fsdgdsafgd.sdgdsg", "dsfgsd.gdsfg", "fdgdsfg"};
+   string test[] ={"  fgdsf.fsdgdsafgd.sdgdsg", "  dsfgsd.gdsfg", "  fdgdsfg"};
  
    for(int i=0;i<3;++i){
        stops(test[i]);
        cout<<test[i]<<endl;
    }
+   string s;
+   getline(cin,s);
+   stops(s);
+   cout<<s;
 }

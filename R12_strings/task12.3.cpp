@@ -1,9 +1,10 @@
  
 /*
- task 14.1, 6.1
+ task 12.3
 Даний рядок, що складається з символів латинського алфавіту, слова в якому
   відокремлені пробілами (одним або декількома). Визначити кількість слів,
   які починаються і закінчуються однією і тією ж літерою.
+TODO: rewrite on C-style
 */
 #include <iostream>
 #include <string>
@@ -43,7 +44,7 @@ int main(){
   
   //cin>>inp_str;
   getline(cin, inp_str);
-  cout<<inp_str; 
+  //cout<<inp_str; 
   int k = sl_word(inp_str);
 
   cout<< "\n The words with same start/end = "<<k<<endl;

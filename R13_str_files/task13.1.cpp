@@ -4,7 +4,7 @@
 
 #include <iostream>
 #include <fstream>
-#include <cctype>
+#include <cctype> //ctype.h - toupper()
 
 using namespace std;
 
@@ -12,15 +12,16 @@ int main(){
  char fname[20] = "deutsch.txt";
  ifstream f(fname);
 
- string Artikles[] = {"der", "das", "die",
+ string Artikles[] = {"der", "das", "die", 
                      // "ein", "einen", "einem", "einer",
-                     // "den", "der", "dem"
+                      "den", "der", "dem"
                      };
 
  string buf;
- bool art = false; 
+ bool isArtikle = false; 
 
- ofstream f2("tmp.txt"); 
+ ofstream f2("tmp.txt"); // resulting file - temporary
+
  while(f>>buf){
   //  cout<<"buf"<<buf;
 
@@ -28,12 +29,12 @@ int main(){
        buf[0] = toupper(buf[0]);
     }
     clog<<buf<<" ";
-    f2<<buf<<" ";
+    f2<<buf<<" "; // записати buf into file
 
-    art = false; 
-    for(int i=0;i<3;i++){
-       if(buf==Artikles[i]){
-          art = true;
+    isArtikle = false; 
+    for(int i=0;i<6;i++){
+       if(buf==Artikles[i]){ 
+          isArtikle = true;
           break;
        }
     }  

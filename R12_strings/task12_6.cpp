@@ -24,7 +24,7 @@ string first_word(const string str){
 
    string res="";
    while(i<n && isalpha(str[i])){
-      res.push_back(str[i]);
+      res.push_back(str[i]); // res += string(str[i])
       i++;
    }
    return res;
@@ -51,6 +51,17 @@ string first_word(const string str, const string delimeter){
    }
    return res;
 }
+
+int partial_split(const string str, const string delimeter, int n, string* mas){
+	string fw = first_word(str, delimeter);
+	int k=0;
+	while(fw!="" && k<n){
+		mas[k++]=fw;
+		fw = first_word(str, delimeter);
+	}
+	return k;
+}
+
 
 int main(){
 

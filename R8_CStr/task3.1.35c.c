@@ -1,28 +1,27 @@
-#include<iostream>
-#include <cstring>
-#include <cmath>
+#include<stdio.h>
+#include <string.h>
+#include <math.h>
 
 #define P 3;
 
-using namespace std;
 
-long long customHash(const string& str) {
-    long long p = 1;
-    long long pow_2 = pow(2, 32);
-
-    long long res = 0;
-    for (int i = 0; i < str.length(); ++i) {
-        char ch = str[i];
+unsigned customHash(const char* str) {
+    unsigned p = 1;
+    
+    unsigned res = 0;
+    size_t len = strlen(str);
+    for (size_t i = 0; i < len; ++i) {
+        unsigned ch = (unsigned)str[i];
         p *= P;
         ch *= p;
-        ch = ch % pow_2;
+
         res += (res + ch) & ((1 << 32) - 1);
     }
     return res;
 }
 
 int main() {
-    string str;
-    cin >> str;
-    cout << customHash(str);
+    char str[100];
+    fgets(stdin,str);
+    printf("%u", customHash(str));
 }

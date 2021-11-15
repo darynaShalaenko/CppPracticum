@@ -1,16 +1,39 @@
-include<iostream>
-
+#include <iostream>
 
 using namespace std;
 
-string f(string& s){
-    size_t first_dot = s.find_first_of(".");
-    size_t last_dot = s.find_last_of(".");
-    return s.substr(first_dot+1, last_dot-first_dot-1);
-}
+int main()
+{
+  string st = "asdfg:efsfrg:awdawdadadtyhy:yjcgj ;ddrg";
+  string res1, res2, res3;
+  int i = -1;
+  int check = 0;
 
-int main() {
-    string s;
-    cin >> s;
-    cout << f(s);
+  while (st[i] != ':')
+  {
+      i++;
+      res1 += st[i];
+  }
+
+  i++;
+
+  while (st[i] != '\0')
+  {
+     res2 += st[i];
+
+     if (st[i] == ':')
+     {check = 1;}
+
+     if (check == 0)
+     {res3 += st[i];}
+
+     i++;
+  }
+
+
+  cout << "text before first ':' = " << res1 << endl;
+  cout << "text after first ':'  = " << res2 << endl;
+  cout << "text between ':'      = " << res3 << endl;
+
+  return 0;
 }

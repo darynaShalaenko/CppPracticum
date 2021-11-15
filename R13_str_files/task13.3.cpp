@@ -12,8 +12,8 @@ using namespace std;
 
 bool checkTags(ifstream& f1, string openTD = "<td>", string closeTD = "</td>"){
 
-  int opentag =0;
-  int closetag =0;
+  int opentag = 0;
+  int closetag = 0;
   
   string buf;
   while(!f1.eof()){

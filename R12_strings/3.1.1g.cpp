@@ -1,16 +1,3 @@
-TUTORIALS
-        HOWTOS
-
-C++ Howtos
-        Split String by Space in C++
-Print Out the Contents of a Vector in C++
-Multiply Two Matrices in C++
-Create a File in C++
-Find Set Intersection in C++
-HowToC++ HowtosReplace a Part of the String in C++
-Replace a Part of the String in C++
-
-Created: November-02, 2020 | Updated: December-10, 2020
 
 Use replace() Method to Replace Part of the String in C++
 Use Custom Function to Replace Part of the String in C++
